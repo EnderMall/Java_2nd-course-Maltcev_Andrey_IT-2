@@ -235,7 +235,7 @@ public class Main {
                             System.out.println("Введите два числа для проверки их суммы.");
                             int ex_2_7_1input = scanner.nextInt();
                             int ex_2_7_2input = scanner.nextInt();
-                            System.out.println(isp.isDivisor(ex_2_7_1input, ex_2_7_2input));
+                            System.out.println(isp.sum2(ex_2_7_1input, ex_2_7_2input));
                             break;
                         case 8:
 
