@@ -123,17 +123,8 @@ public class Main {
     x=8 y=-1 z=4 */
 
     public int max3 (int x, int y, int z){
-        int max;
-        if (x>y){
-            max = x;
-        }
-        else {
-            max = y;
-        }
-        if (max<z){
-            max = z;
-        }
-        return max;
+        int maxx = Math.max(x, y);
+        return Math.max(maxx,z);
     }
 
     /* #2.7 Двойная сумма.
