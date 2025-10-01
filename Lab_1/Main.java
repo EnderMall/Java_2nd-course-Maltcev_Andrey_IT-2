@@ -1,6 +1,8 @@
 package Lab_1;
 
 import java.util.InputMismatchException;
+import java.util.Random;
+
 import java.util.Scanner;
 
 public class Main {
@@ -170,6 +172,187 @@ public class Main {
     x=44
     результат: “44 года” */
 
+    public String age (int x){
+        int ost = x%10;
+        if ((x!=11) && (ost==1)){
+            return x+" год";
+        }
+        else if ((ost==3 && x!=13) || (ost==4 && x!=14)|| (ost==2 && x!=12)){
+            return x+" года";
+        }
+        else {
+            return x+" лет";
+        }
+    }
+
+    /* #2.10 Вывод дней недели.
+    Дана сигнатура метода: public void printDays (String x);
+    В качестве параметра метод принимает строку, в которой записано название
+    дня недели. Необходимо реализовать метод таким образом, чтобы он выводил
+    на экран название переданного в него дня и всех последующих до конца недели
+    дней. Если в качестве строки передан не день, то выводится текст “это не день
+    недели”. Первый день понедельник, последний – воскресенье. Вместо if в данной
+    задаче используйте switch.
+    Пример 1:
+    x=”четверг”
+    результат:
+    четверг
+    пятница
+    суббота
+    воскресенье
+    Пример 2:
+    x=”чг”
+    результат:
+    это не день недели */
+
+    public void printDays(String x){
+        x = x.toLowerCase();
+        switch (x){
+            case "понедельник":
+                System.out.println("Понедельник");
+            case "вторник":
+                System.out.println("Вторник");
+            case "среда":
+                System.out.println("Среда");
+            case "четверг":
+                System.out.println("Четверг");
+            case "пятница":
+                System.out.println("Пятница");
+            case "суббота":
+                System.out.println("Суббота");
+            case "воскресенье":
+                System.out.println("Воскресенье");
+                break;
+            default:
+                System.out.println("Это не день недели");
+                break;
+        }
+    }
+
+    /* #3.2 Числа наоборот.
+    Дана сигнатура метода: public String reverseListNums (int x);
+    Необходимо реализовать метод таким образом, чтобы он возвращал строку, в
+    которой будут записаны все числа от x до 0 (включительно).
+    Пример:
+    x=5
+    результат: “5 4 3 2 1 0” */
+
+    public String  reverseListNums (int x){
+        String out = "";
+        while (x!=0){
+            out=out + x + " ";
+            x=x-1;
+        }
+        return out+"0";
+    }
+
+    /* #3.4 Степень числа.
+    Дана сигнатура метода: public int pow (int x, int y);
+    Необходимо реализовать метод таким образом, чтобы он возвращал результат
+    возведения x в степень y.
+    Подсказка: для получения степени необходимо умножить единицу на число x, и
+    сделать это y раз, т.е. два в третьей степени это 1*2*2*2
+    Пример:
+    x=2
+    y=5
+    результат: 32 */
+
+    public int pow (int x, int y){
+        int prois = 1;
+        for (int i = 1; i <= y; i++){
+            prois=prois*x;
+        }
+        return prois;
+    }
+
+    /* #3.6 Одинаковость.
+    Дана сигнатура метода: public bool equalNum (int x);
+    Необходимо реализовать метод таким образом, чтобы он возвращал true, если
+    все знаки числа одинаковы, и false в ином случае.
+    Подсказки:
+    int x=123%10; // х будет иметь значение 3
+    int у=123/10; // у будет иметь значение 12
+    Пример 1:
+    x=1111
+    результат: true
+    Пример 2:
+    x=1211
+    результат: false */
+
+    public boolean equalNum (int x){
+        int last = x%10;
+        int pre = x/10;
+        while (pre>0){
+            if (pre%10!=last) {
+                return false;
+            }
+            pre=pre/10;
+        }
+        return true;
+    }
+
+    /* #3.9 Правый треугольник.
+    Дана сигнатура метода: public void rightTriangle (int x);
+    Необходимо реализовать метод таким образом, чтобы он выводил на экран
+    треугольник из символов ‘*’ у которого х символов в высоту, а количество
+    символов в ряду совпадает с номером строки, при этом треугольник выровнен
+    по правому краю. Подсказка: перед символами ‘*’ следует выводить
+    необходимое количество пробелов.
+    Пример 1:
+    x=3
+    результат:
+     *
+     **
+    ***
+    Пример 2:
+    x=4
+    результат:
+     *
+     **
+     ***
+    **** */
+
+    public void rightTriangle (int x){
+        String ugl="";
+        for (int i=1; i<=x; i++){
+            ugl=ugl+"*";
+            System.out.println(ugl);
+        }
+    }
+
+    /* #3.10 Угадайка.
+    Дана сигнатура метода: public void guessGame()
+    Необходимо реализовать метод таким образом, чтобы он генерировал
+    случайное число от 0 до 9, далее считывал с консоли введенное пользователем
+    число и выводил, угадал ли пользователь то, что было загадано, или нет. Метод
+    запускается до тех пор, пока пользователь не угадает число. После этого
+    выведите на экран количество попыток, которое потребовалось пользователю,
+    чтобы угадать число.
+    Пример:
+    Введите число от 0 до 9:
+    5
+    Вы не угадали, введите число от 0 до 9:
+    9
+    Вы угадали!
+    Вы отгадали число за 2 попытки */
+
+    public void guessGame(){
+        int gueses=1;
+        Random gg = new Random();
+        int num = gg.nextInt(10);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число от 0 до 9: ");
+        int gues = scanner.nextInt();
+        while (gues!=num){
+            System.out.print("\nВы не угадали, введите число от 0 до 9: ");
+            gueses=gueses+1;
+            gues = scanner.nextInt();
+        }
+        System.out.println("\nВы угадали!");
+        System.out.println("На то чтобы угадать число: " + num + ", вы потратили: "+gueses+" попытки!");
+
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -238,10 +421,14 @@ public class Main {
                             System.out.println(isp.sum2(ex_2_7_1input, ex_2_7_2input));
                             break;
                         case 8:
-
+                            System.out.println("Введите возраст для проверки формы.");
+                            int ex_2_8_input = scanner.nextInt();
+                            System.out.println(isp.age(ex_2_8_input));
                             break;
                         case 10:
-
+                            System.out.println("Введите день недели.");
+                            String ex_2_10_input = scanner.next();
+                            isp.printDays(ex_2_10_input);
                             break;
                         default:
                             System.out.println("Вы ввели неверный номер подзадания!");
@@ -251,19 +438,28 @@ public class Main {
                 case 3:
                     switch (sub_ex) {
                         case 2:
-
+                            System.out.println("Введите число для получения числовой последовательности.");
+                            int ex_3_2_input = scanner.nextInt();
+                            System.out.println(isp.reverseListNums(ex_3_2_input));
                             break;
                         case 4:
-
+                            System.out.println("Введите два числа для получения первого числа в степени второго числа.");
+                            int ex_3_4_1input = scanner.nextInt();
+                            int ex_3_4_2input = scanner.nextInt();
+                            System.out.println(isp.pow(ex_3_4_1input, ex_3_4_2input));
                             break;
                         case 6:
-
+                            System.out.println("Введите число для проверки одинаковости.");
+                            int ex_3_6_input = scanner.nextInt();
+                            System.out.println(isp.equalNum(ex_3_6_input));
                             break;
                         case 9:
-
+                            System.out.println("Введите число для построения правого треугольника.");
+                            int ex_3_9_input = scanner.nextInt();
+                            isp.rightTriangle(ex_3_9_input);
                             break;
                         case 10:
-
+                            isp.guessGame();
                             break;
                         default:
                             System.out.println("Вы ввели неверный номер подзадания!");
