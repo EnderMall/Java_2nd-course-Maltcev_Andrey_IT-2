@@ -238,9 +238,9 @@ public class Main {
     результат: “5 4 3 2 1 0” */
 
     public String  reverseListNums (int x){
-        String out = "";
+        StringBuilder out = new StringBuilder();
         while (x!=0){
-            out=out + x + " ";
+            out.append(x).append(" ");
             x=x-1;
         }
         return out+"0";
