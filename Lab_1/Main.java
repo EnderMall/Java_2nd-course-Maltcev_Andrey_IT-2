@@ -1,11 +1,38 @@
 package Lab_1;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 
 import java.util.Scanner;
 
 public class Main {
+
+    public int[] createmas(){
+        int[] mas = new int[0];
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите длину массива.");
+            int maslen = scanner.nextInt();
+            mas = new int[maslen];
+            if (mas.length==0){
+                System.out.println("Я не буду работать с нулевым массивом!");
+            }
+            else {
+                System.out.println("Введите элементы массива через пробел.");
+                for (int i=0;i<maslen;i++){
+                    int masel = scanner.nextInt();
+                    mas[i]=masel;
+                }
+            }
+            return mas;
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Введены неверные данные!");
+            mas = new int[0];
+        }
+        return mas;
+    }
 
     /* #1.1 Дробная часть.
     Дана сигнатура метода: public double fraction (double x);
@@ -353,6 +380,104 @@ public class Main {
 
     }
 
+    /* #4.1 Поиск первого значения.
+    Дана сигнатура метода: public int findFirst (int[] arr, int x);
+    Необходимо реализовать метод таким образом, чтобы он возвращал индекс
+    первого вхождения числа x в массив arr. Если число не входит в массив –
+    возвращается -1.
+    Пример:
+    arr=[1,2,3,4,2,2,5]
+    x=2
+    результат: 1 */
+
+    public int findFirst (int[] arr, int x){
+        for (int i = 0; i< arr.length;i++){
+            if (arr[i]==x){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /* #4.3 Поиск максимального.
+    Дана сигнатура метода: public int maxAbs (int[] arr);
+    Необходимо реализовать метод таким образом, чтобы он возвращал
+    наибольшее по модулю (то есть без учета знака) значение массива arr.
+    Пример:
+    arr=[1,-2,-7,4,2,2,5] */
+
+    public int maxAbs (int[] arr){
+        int max=0;
+        for (int j : arr) {
+            if (Math.abs(j) > max) {
+                max = Math.abs(j);
+            }
+        }
+        return max;
+    }
+
+    /* #4.6 Реверс.
+    Дана сигнатура метода: public void reverse (int[] arr);
+    Необходимо реализовать метод таким образом, чтобы он изменял массив arr.
+    После проведенных изменений массив должен быть записан задом-наперед.
+    Пример:
+    arr=[1,2,3,4,5]
+    результат: arr=[5,4,3,2,1] */
+
+    public void reverse (int[] arr){
+        int mid=arr.length/2;
+        int last=arr.length-1;
+        for (int i =0;i<mid;i++){
+            int x = arr[i];
+            arr[i]=arr[last-i];
+            arr[last-i]=x;
+        }
+        System.out.println("Ваш массив: "+ Arrays.toString(arr));
+    }
+
+    /* #4.7 Возвратный реверс.
+    Дана сигнатура метода: public int[] reverseBack (int[] arr);
+    Необходимо реализовать метод таким образом, чтобы он возвращал новый
+    массив, в котором значения массива arr записаны задом наперед.
+    Пример:
+    arr=[1,2,3,4,5]
+    результат: [5,4,3,2,1] */
+
+    public int[] reverseBack (int[] arr){
+        int mid=arr.length/2;
+        int last=arr.length-1;
+        for (int i =0;i<mid;i++){
+            int x = arr[i];
+            arr[i]=arr[last-i];
+            arr[last-i]=x;
+        }
+        return arr;
+    }
+
+    /* #4.8 Объединение.
+    Дана сигнатура метода: public int[] concat (int[] arr1,int[] arr2);
+    Необходимо реализовать метод таким образом, чтобы он возвращал новый
+    массив, в котором сначала идут элементы первого массива (arr1), а затем
+    второго (arr2).
+    Пример:
+    arr1=[1,2,3]
+    arr2=[7,8,9]
+    результат: [1,2,3,7,8,9] */
+
+    public int[] concat (int[] arr1,int[] arr2){
+        int[] mas = new int[arr1.length+arr2.length];
+        int pos = 0;
+        for (int i : arr1){
+            mas[pos]=i;
+            pos++;
+        }
+        pos++;
+        for (int i : arr2) {
+            mas[pos] = i;
+            pos++;
+        }
+        return mas;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -469,19 +594,44 @@ public class Main {
                 case 4:
                     switch (sub_ex) {
                         case 1:
-
+                            System.out.println("В данном задании происходит поиск первого вхождения числа в массив.");
+                            int[] ex_4_1_1input = isp.createmas();
+                            if (ex_4_1_1input.length==0){
+                                break;
+                            }
+                            System.out.println("Введите число для поиска его позиции в массиве.");
+                            int ex_4_1_2input = scanner.nextInt();
+                            System.out.println(isp.findFirst(ex_4_1_1input, ex_4_1_2input));
                             break;
                         case 3:
-
+                            System.out.println("В данном задании происходит поиск максимального по модулю элемента массива.");
+                            int[] ex_4_3_1input = isp.createmas();
+                            if (ex_4_3_1input.length==0){
+                                break;
+                            }
+                            System.out.println(isp.maxAbs(ex_4_3_1input));
                             break;
                         case 6:
-
+                            System.out.println("В данном задании происходит разворот массива.");
+                            int[] ex_4_6_1input = isp.createmas();
+                            if (ex_4_6_1input.length==0){
+                                break;
+                            }
+                            isp.reverse(ex_4_6_1input);
                             break;
                         case 7:
-
+                            System.out.println("В данном задании происходит разворот массива.");
+                            int[] ex_4_7_1input = isp.createmas();
+                            if (ex_4_7_1input.length==0){
+                                break;
+                            }
+                            System.out.println("Ваш массив: "+ Arrays.toString(isp.reverseBack(ex_4_7_1input)));
                             break;
                         case 8:
-
+                            System.out.println("В данном задании происходит сложение массивов.");
+                            int[] ex_4_8_1input = isp.createmas();
+                            int[] ex_4_8_2input = isp.createmas();
+                            System.out.println("Ваш массив: "+ Arrays.toString(isp.concat(ex_4_8_1input,ex_4_8_2input)));
                             break;
                         default:
                             System.out.println("Вы ввели неверный номер подзадания!");
