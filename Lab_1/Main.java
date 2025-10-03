@@ -44,8 +44,14 @@ public class Main {
     результат: 0,25 */
 
     public double fraction(double x) {
-        double re_x = Math.floor(x);
-        return x - re_x;
+        if (x>0){
+            double re_x = Math.floor(x);
+            return x-re_x;
+        }
+        else {
+            double re_x = Math.ceil(x);
+            return x-re_x;
+        }
     }
 
     /* #1.4 Есть ли позитив.
@@ -201,10 +207,10 @@ public class Main {
 
     public String age (int x){
         int ost = x%10;
-        if ((x!=11) && (ost==1)){
+        if ((x%100!=11) && (ost==1)){
             return x+" год";
         }
-        else if ((ost==3 && x!=13) || (ost==4 && x!=14)|| (ost==2 && x!=12)){
+        else if ((ost==3 && x%100!=13) || (ost==4 && x%100!=14)|| (ost==2 && x%100!=12)){
             return x+" года";
         }
         else {
@@ -409,8 +415,8 @@ public class Main {
     public int maxAbs (int[] arr){
         int max=0;
         for (int j : arr) {
-            if (Math.abs(j) > max) {
-                max = Math.abs(j);
+            if (Math.abs(j) > Math.abs(max)) {
+                max = j;
             }
         }
         return max;
@@ -528,7 +534,7 @@ public class Main {
                 case 2:
                     switch (sub_ex) {
                         case 3:
-                            System.out.println("Введите число для проверки на делимость.");
+                            System.out.println("Введите число для проверки на делимость на 3 или 5.");
                             int ex_2_3_input = scanner.nextInt();
                             System.out.println(isp.is35(ex_2_3_input));
                             break;
@@ -546,7 +552,7 @@ public class Main {
                             System.out.println(isp.sum2(ex_2_7_1input, ex_2_7_2input));
                             break;
                         case 8:
-                            System.out.println("Введите возраст для проверки формы.");
+                            System.out.println("Введите возраст для проверки формы слова.");
                             int ex_2_8_input = scanner.nextInt();
                             System.out.println(isp.age(ex_2_8_input));
                             break;
@@ -574,7 +580,7 @@ public class Main {
                             System.out.println(isp.pow(ex_3_4_1input, ex_3_4_2input));
                             break;
                         case 6:
-                            System.out.println("Введите число для проверки одинаковости.");
+                            System.out.println("Введите число для проверки одинаковости всех элементов.");
                             int ex_3_6_input = scanner.nextInt();
                             System.out.println(isp.equalNum(ex_3_6_input));
                             break;
@@ -599,7 +605,7 @@ public class Main {
                             if (ex_4_1_1input.length==0){
                                 break;
                             }
-                            System.out.println("Введите число для поиска его позиции в массиве.");
+                            System.out.println("Введите число для поиска его индекса в массиве.");
                             int ex_4_1_2input = scanner.nextInt();
                             System.out.println(isp.findFirst(ex_4_1_1input, ex_4_1_2input));
                             break;
@@ -647,5 +653,4 @@ public class Main {
             System.out.println("Введены неверные данные!");
         }
     }
-
 }
