@@ -35,6 +35,9 @@ public class Ex5code {
                 System.out.println(time2+"\nВаши секунды переведены!");
                 System.out.println(time1+"\nВаше время переведено!");
             }
+            else {
+                System.out.println("Неверный ввод!");
+            }
         }
         catch (InputMismatchException e){
             System.out.println("Введены неверные данные!");
