@@ -4,7 +4,7 @@ import Lab_3.TypeCheck;
 
 public class Ex3code {
     public void code(){
-        System.out.println("Задание 3\n");
+        System.out.println("Задание 3.2.4\n");
         TypeCheck check = new TypeCheck();
         Node tree = new Node();
         boolean ist=true;

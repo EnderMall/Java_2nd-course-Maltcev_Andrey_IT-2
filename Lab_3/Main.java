@@ -6,6 +6,8 @@ import Lab_3.Ex2.Ex2code;
 import Lab_3.Ex3.Ex3code;
 import Lab_3.Ex3.Node;
 import Lab_3.Ex4.Ex4code;
+import Lab_3.Ex5.Ex5code;
+import Lab_3.Ex6.Ex6code;
 
 
 public class Main {
@@ -16,8 +18,13 @@ public class Main {
 //        code2.code();
 //        Ex3code code3 = new Ex3code();
 //        code3.code();
-        Ex4code code4 = new Ex4code();
-        code4.code();
+//        Ex4code code4 = new Ex4code();
+//        code4.code();
+//        Ex5code code5 = new Ex5code();
+//        code5.code();
+        Ex6code code6 = new Ex6code();
+        code6.code();
+
 
     }
 }

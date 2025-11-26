@@ -4,7 +4,7 @@ import Lab_3.TypeCheck;
 
 public class Ex1code {
     public void code(){
-        System.out.println("Задание 1\n");
+        System.out.println("Задание 3.1.2\n");
         TypeCheck check = new TypeCheck();
         boolean ist=true;
         while (ist){

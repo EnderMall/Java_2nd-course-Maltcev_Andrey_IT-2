@@ -5,7 +5,7 @@ import Lab_2.Ex3.Employee;
 
 public class Ex2code {
     public void code(){
-        System.out.println("Задание 2\n");
+        System.out.println("Задание 3.1.11\n");
         Employee petr = new Employee();
         Employee coz= new Employee();
         Employee sidr = new Employee();

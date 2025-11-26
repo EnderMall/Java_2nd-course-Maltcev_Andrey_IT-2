@@ -19,7 +19,7 @@ public class TypeCheck {
     }
 
     public String getString() {
-        return scan.next();
+        return scan.nextLine();
     }
     public Boolean getYesOrNo(){
         String temp = scan.next();
