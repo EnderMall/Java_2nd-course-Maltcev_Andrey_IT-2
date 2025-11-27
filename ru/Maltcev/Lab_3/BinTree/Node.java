@@ -1,4 +1,4 @@
-package ru.Maltcev.BinTree;
+package ru.Maltcev.Lab_3.BinTree;
 
 public class Node {
     private Integer num;

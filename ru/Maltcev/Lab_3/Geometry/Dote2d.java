@@ -1,4 +1,4 @@
-package ru.Maltcev.Geometry;
+package ru.Maltcev.Lab_3.Geometry;
 
 import java.util.Objects;
 

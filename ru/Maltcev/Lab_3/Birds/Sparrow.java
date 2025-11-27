@@ -1,4 +1,4 @@
-package ru.Maltcev.Birds;
+package ru.Maltcev.Lab_3.Birds;
 
 
 public class Sparrow extends Bird {

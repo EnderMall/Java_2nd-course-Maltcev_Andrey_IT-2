@@ -1,4 +1,4 @@
-package ru.Maltcev.Office;
+package ru.Maltcev.Lab_3.Office;
 
 import Lab_2.Ex3.Department;
 import Lab_2.Ex3.Employee;

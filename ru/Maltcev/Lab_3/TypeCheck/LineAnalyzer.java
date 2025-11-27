@@ -1,4 +1,4 @@
-package ru.Maltcev.TypeCheck;
+package ru.Maltcev.Lab_3.TypeCheck;
 
 import static java.lang.Integer.parseInt;
 import static java.lang.Math.pow;

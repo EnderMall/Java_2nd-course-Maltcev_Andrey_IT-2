@@ -1,4 +1,4 @@
-package ru.Maltcev.TypeCheck;
+package ru.Maltcev.Lab_3.TypeCheck;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;

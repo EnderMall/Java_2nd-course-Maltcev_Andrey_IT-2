@@ -1,13 +1,14 @@
-package ru.Maltcev.Lab_3;
+package ru.Maltcev.Lab_3.Main;
 
 
+import Lab_2.Ex3.Department;
 import Lab_2.Ex3.Employee;
-import ru.Maltcev.BinTree.Node;
-import ru.Maltcev.Birds.*;
-import ru.Maltcev.Geometry.*;
-import ru.Maltcev.Office.*;
-import ru.Maltcev.Times.DayTime;
-import ru.Maltcev.TypeCheck.*;
+import ru.Maltcev.Lab_3.BinTree.Node;
+import ru.Maltcev.Lab_3.Geometry.*;
+import ru.Maltcev.Lab_3.Birds.*;
+import ru.Maltcev.Lab_3.Office.*;
+import ru.Maltcev.Lab_3.Times.DayTime;
+import ru.Maltcev.Lab_3.TypeCheck.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,8 +61,6 @@ public class Main {
         System.out.println(petr);
         System.out.println(coz);
         System.out.println(sidr+"\n");
-
-
     }
 
     public static void code3(){

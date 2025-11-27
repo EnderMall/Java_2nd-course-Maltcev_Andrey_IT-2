@@ -1,4 +1,4 @@
-package ru.Maltcev.Geometry;
+package ru.Maltcev.Lab_3.Geometry;
 
 public class Dote3d  extends Dote2d {
     private Integer z;

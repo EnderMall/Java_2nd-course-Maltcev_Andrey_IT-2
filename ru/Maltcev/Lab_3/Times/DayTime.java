@@ -1,4 +1,4 @@
-package ru.Maltcev.Times;
+package ru.Maltcev.Lab_3.Times;
 
 import Lab_2.Ex6.TimeToSleep;
 
