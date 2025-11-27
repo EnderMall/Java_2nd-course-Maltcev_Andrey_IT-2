@@ -4,15 +4,10 @@ package ru.Maltcev.Lab_3;
 import Lab_2.Ex3.Employee;
 import ru.Maltcev.BinTree.Node;
 import ru.Maltcev.Birds.*;
-import ru.Maltcev.Geometry.Dote2d;
-import ru.Maltcev.Geometry.Dote3d;
-import ru.Maltcev.Lab_3.ExCodes.Ex6code;
-import ru.Maltcev.Lab_3.ExCodes.Ex7code;
-import ru.Maltcev.Office.Boss;
-import ru.Maltcev.Office.Departament;
+import ru.Maltcev.Geometry.*;
+import ru.Maltcev.Office.*;
 import ru.Maltcev.Times.DayTime;
-import ru.Maltcev.TypeCheck.LineAnalyzer;
-import ru.Maltcev.TypeCheck.TypeCheck;
+import ru.Maltcev.TypeCheck.*;
 
 import java.util.ArrayList;
 import java.util.List;
