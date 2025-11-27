@@ -1,6 +1,8 @@
-package Lab_3.Ex2;
+package ru.Maltcev.Lab_3.ExCodes;
 
 import Lab_2.Ex3.Employee;
+import ru.Maltcev.Office.Boss;
+import ru.Maltcev.Office.Departament;
 
 
 public class Ex2code {

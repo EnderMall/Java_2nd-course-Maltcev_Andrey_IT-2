@@ -1,6 +1,6 @@
-package Lab_3.Ex3;
-
-import Lab_3.TypeCheck;
+package ru.Maltcev.Lab_3.ExCodes;
+import ru.Maltcev.BinTree.Node;
+import ru.Maltcev.TypeCheck.TypeCheck;
 
 public class Ex3code {
     public void code(){

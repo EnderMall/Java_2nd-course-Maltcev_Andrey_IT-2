@@ -1,13 +1,9 @@
-package Lab_3;
+package ru.Maltcev.Lab_3;
 
 
-import Lab_3.Ex1.Ex1code;
-import Lab_3.Ex2.Ex2code;
-import Lab_3.Ex3.Ex3code;
-import Lab_3.Ex3.Node;
-import Lab_3.Ex4.Ex4code;
-import Lab_3.Ex5.Ex5code;
-import Lab_3.Ex6.Ex6code;
+import ru.Maltcev.Lab_3.ExCodes.Ex6code;
+import ru.Maltcev.Lab_3.ExCodes.Ex7code;
+import ru.Maltcev.TypeCheck.LineAnalyzer;
 
 
 public class Main {
@@ -22,8 +18,12 @@ public class Main {
 //        code4.code();
 //        Ex5code code5 = new Ex5code();
 //        code5.code();
-        Ex6code code6 = new Ex6code();
-        code6.code();
+//        Ex6code code6 = new Ex6code();
+//        code6.code();
+        Ex7code code7 = new Ex7code();
+        code7.code();
+        LineAnalyzer line = new LineAnalyzer();
+        line.code("1","2");
 
 
     }

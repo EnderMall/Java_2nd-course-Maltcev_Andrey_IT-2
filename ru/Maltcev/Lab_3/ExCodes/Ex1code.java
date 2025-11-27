@@ -1,6 +1,7 @@
-package Lab_3.Ex1;
+package ru.Maltcev.Lab_3.ExCodes;
 
-import Lab_3.TypeCheck;
+import ru.Maltcev.Times.DayTime;
+import ru.Maltcev.TypeCheck.TypeCheck;
 
 public class Ex1code {
     public void code(){

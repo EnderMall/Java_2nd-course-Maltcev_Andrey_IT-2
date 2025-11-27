@@ -1,18 +1,17 @@
-package Lab_3.Ex4;
+package ru.Maltcev.Lab_3.ExCodes;
 
-import Lab_3.TypeCheck;
+import ru.Maltcev.Geometry.Dote3d;
+import ru.Maltcev.TypeCheck.TypeCheck;
 
 public class Ex4code {
     public void code(){
         System.out.println("Задание 3.3.5\n");
         TypeCheck check = new TypeCheck();
-        Dote3d testDot= new Dote3d();
-        Dote3d d1 = new Dote3d();
-        Dote3d d2 = new Dote3d();
-        Dote3d d3 = new Dote3d();
-        d1.setX(4);d1.setY(5);d1.setZ(6);
-        d2.setX(5);d2.setY(6);d2.setZ(7);
-        d3.setX(6);d3.setY(7);d3.setZ(8);
+        Dote3d testDot= new Dote3d(0,0,0);
+        Dote3d d1 = new Dote3d(5,6,7);
+        Dote3d d2 = new Dote3d(6,7,8);
+        Dote3d d3 = new Dote3d(7,8,9);
+
         System.out.println("Стандартные точки для вывода: "+d1+", "+d2+", "+d3);
         System.out.println("Создайте свою точку!");
         boolean ist=true;

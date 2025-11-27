@@ -1,10 +1,10 @@
-package Lab_3.Ex4;
+package ru.Maltcev.Geometry;
 
-public class Dote3d  extends Dote2d{
+public class Dote3d  extends Dote2d {
     private Integer z;
-    public Dote3d(){
-        super();
-        this.z=null;
+    public Dote3d(int x, int y, int z){
+        super(x,y);
+        this.z=z;
     }
 
     public void setZ(Integer z) {
