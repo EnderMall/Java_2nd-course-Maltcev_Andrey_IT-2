@@ -67,6 +67,9 @@ public class Main {
         System.out.println("Задание 3.2.4\n");
         TypeCheck check = new TypeCheck();
         Node tree = new Node();
+        tree.add(3);tree.add(5);tree.add(4);
+        tree.add(7);tree.add(1);tree.add(2);
+        System.out.println("Исходное дерево из задания: " + tree);
         boolean ist=true;
         while (ist){
             System.out.println("Введите число для добавления в дерево.");
