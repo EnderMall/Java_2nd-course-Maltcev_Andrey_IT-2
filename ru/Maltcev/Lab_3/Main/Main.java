@@ -9,7 +9,7 @@ import ru.Maltcev.Lab_3.Birds.*;
 import ru.Maltcev.Lab_3.Office.*;
 import ru.Maltcev.Lab_3.Times.DayTime;
 import ru.Maltcev.Lab_3.TypeCheck.*;
-
+import ru.Maltcev.Lab_3.TypeCheck.*;
 import java.util.ArrayList;
 import java.util.List;
 
