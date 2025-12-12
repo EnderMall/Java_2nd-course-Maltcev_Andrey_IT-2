@@ -11,6 +11,11 @@ import java.util.List;
 
 public class Main {
 
+    private static void outBoxValue (Box<Integer> box) {
+        int number = box.take();
+        System.out.println("В коробке было число: "+number);
+    }
+
     private static void exCode1(){
         System.out.println("\nЗадание 4.1.1");
 
@@ -18,9 +23,16 @@ public class Main {
         number.put(3);
         outBoxValue(number);
     }
-    private static void outBoxValue (Box<Integer> box) {
-        int number = box.take();
-        System.out.println("В коробке было число: "+number);
+
+
+    private static void outStorageValue (Storage<Integer> safe) {
+        Integer numb = safe.get();
+        System.out.println("В коробке было число: "+numb);
+    }
+
+    private static void outStorageString (Storage<String> safe) {
+        String str = safe.get();
+        System.out.println("В коробке была строка: "+str);
     }
 
     private static void exCode2(){
@@ -40,14 +52,9 @@ public class Main {
         outStorageString(safe4);
     }
 
-    private static void outStorageValue (Storage<Integer> safe) {
-        Integer numb = safe.get();
-        System.out.println("В коробке было число: "+numb);
-    }
 
-    private static void outStorageString (Storage<String> safe) {
-        String str = safe.get();
-        System.out.println("В коробке была строка: "+str);
+    private static void combine(Box<? super Dote3d> something, Dote3d dote){
+        something.put(dote);
     }
 
     private  static  void exCode3(){
@@ -65,8 +72,14 @@ public class Main {
         System.out.println("Коробка для объектов съела точку!");
 
     }
-    private static void combine(Box<? super Dote3d> something, Dote3d dote){
-        something.put(dote);
+
+
+    private static <T, R> List<R> map(List<T> list, Transform<T, R> function) {
+        List<R> result = new ArrayList<>();
+        for (T item : list) {
+            result.add(function.apply(item));
+        }
+        return result;
     }
 
     private  static  void exCode4() {
@@ -93,12 +106,15 @@ public class Main {
 
     }
 
-    private static <T, R> List<R> map(List<T> list, Transform<T, R> function) {
-        List<R> result = new ArrayList<>();
-        for (T item : list) {
-            result.add(function.apply(item));
+
+    private static <T>List<T> filter(List<T> list, Filtrate<T> filter){
+        List<T> res = new ArrayList<>();
+        for (T item :list){
+            if (filter.test(item)){
+                res.add(item);
+            }
         }
-        return result;
+        return res;
     }
 
     private  static  void exCode5() {
@@ -128,14 +144,17 @@ public class Main {
         System.out.println(Arrays.deepToString(allPos.toArray()));
     }
 
-    private static <T>List<T> filter(List<T> list, Filtrate<T> filter){
-        List<T> res = new ArrayList<>();
+
+    private static <T,R> R reductor(List<T> list,R argument, Reduct<T,R> reducted){
+        if (list == null){
+            return argument;
+        }
+        R res = argument;
         for (T item :list){
-            if (filter.test(item)){
-                res.add(item);
-            }
+            res = reducted.reduct(res,item);
         }
         return res;
+
     }
 
     private  static  void exCode6() {
@@ -156,18 +175,16 @@ public class Main {
         System.out.println(outIntLen);
 
     }
-    private static <T,R> R reductor(List<T> list,R argument, Reduct<T,R> reducted){
-        if (list == null){
-            return argument;
-        }
-        R res = argument;
-        for (T item :list){
-            res = reducted.reduct(res,item);
-        }
-        return res;
 
+
+    public static <T, P> P collect(List<T> items, Colector<T, P> collector, Giver<P> supplier) {
+
+        P result = supplier.give();
+        for (T item : items) {
+            collector.collect(result, item);
+        }
+        return result;
     }
-
 
     private  static  void exCode7() {
         System.out.println("\nЗадание 4.3.4");
@@ -209,16 +226,6 @@ public class Main {
 
         System.out.println("\n3. Уникальные строки: " + unique);
     }
-
-    public static <T, P> P collect(List<T> items, Colector<T, P> collector, Giver<P> supplier) {
-
-        P result = supplier.give();
-        for (T item : items) {
-            collector.collect(result, item);
-        }
-        return result;
-    }
-
 
     public static void main(String[] args){
         exCode1();
